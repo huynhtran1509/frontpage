@@ -65,6 +65,8 @@
 		B2B1DF3B177CF9A70041973B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B2B1DF3D177CF9A70041973B /* frontpageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = frontpageTests.m; sourceTree = "<group>"; };
 		B2B1DF47177CFA190041973B /* Frontpage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Frontpage.storyboard; sourceTree = "<group>"; };
+		B2B1DF48177CFB410041973B /* PostsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PostsViewController.h; path = Classes/PostsViewController.h; sourceTree = "<group>"; };
+		B2B1DF49177CFB410041973B /* PostsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PostsViewController.m; path = Classes/PostsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				B2B1DF20177CF9A70041973B /* AppDelegate.m */,
 				B2B1DF29177CF9A70041973B /* Images.xcassets */,
 				B2B1DF47177CFA190041973B /* Frontpage.storyboard */,
+				B2B1DF4A177CFB450041973B /* Controllers */,
 				B2B1DF15177CF9A70041973B /* Networking */,
 				B2B1DF22177CF9A70041973B /* Models */,
 				B2B1DF13177CF9A70041973B /* Supporting Files */,
@@ -188,6 +191,15 @@
 				B2B1DF3A177CF9A70041973B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B2B1DF4A177CFB450041973B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B2B1DF48177CFB410041973B /* PostsViewController.h */,
+				B2B1DF49177CFB410041973B /* PostsViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

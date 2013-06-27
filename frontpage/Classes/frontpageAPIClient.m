@@ -1,7 +1,7 @@
 #import "frontpageAPIClient.h"
 #import "AFJSONRequestOperation.h"
 
-static NSString * const kfrontpageAPIBaseURLString = @"<# API Base URL #>";
+static NSString * const kfrontpageAPIBaseURLString = @"http://www.reddit.com/";
 
 @implementation frontpageAPIClient
 
@@ -31,6 +31,17 @@ static NSString * const kfrontpageAPIBaseURLString = @"<# API Base URL #>";
 
 - (id)representationOrArrayOfRepresentationsFromResponseObject:(id)responseObject {
     return responseObject;
+}
+
+- (NSURLRequest *)requestForFetchRequest:(NSFetchRequest *)fetchRequest
+                             withContext:(NSManagedObjectContext *)context
+{
+    NSMutableURLRequest *mutableURLRequest = nil;
+    if ([fetchRequest.entityName isEqualToString:@"Post"]) {
+        mutableURLRequest = [self requestWithMethod:@"GET" path:@"/r/all/top" parameters:nil];
+    }
+    
+    return mutableURLRequest;
 }
 
 - (NSDictionary *)attributesForRepresentation:(NSDictionary *)representation 
