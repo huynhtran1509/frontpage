@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BED466142EA4EA78724C85C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE61CBF8B5E348929E5481CC /* libPods.a */; };
 		B2B1DF09177CF9A70041973B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B1DF08177CF9A70041973B /* Foundation.framework */; };
 		B2B1DF0B177CF9A70041973B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B1DF0A177CF9A70041973B /* CoreGraphics.framework */; };
 		B2B1DF0D177CF9A70041973B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B1DF0C177CF9A70041973B /* UIKit.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		838CF9098DF442F0BDD88666 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		AE61CBF8B5E348929E5481CC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B1DF05177CF9A70041973B /* frontpage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = frontpage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B1DF08177CF9A70041973B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B2B1DF0A177CF9A70041973B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,6 +64,7 @@
 		B2B1DF39177CF9A70041973B /* frontpageTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "frontpageTests-Info.plist"; sourceTree = "<group>"; };
 		B2B1DF3B177CF9A70041973B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B2B1DF3D177CF9A70041973B /* frontpageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = frontpageTests.m; sourceTree = "<group>"; };
+		B2B1DF47177CFA190041973B /* Frontpage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Frontpage.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 				B2B1DF0F177CF9A70041973B /* CoreData.framework in Frameworks */,
 				B2B1DF0D177CF9A70041973B /* UIKit.framework in Frameworks */,
 				B2B1DF09177CF9A70041973B /* Foundation.framework in Frameworks */,
+				1BED466142EA4EA78724C85C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +101,7 @@
 				B2B1DF37177CF9A70041973B /* frontpageTests */,
 				B2B1DF07177CF9A70041973B /* Frameworks */,
 				B2B1DF06177CF9A70041973B /* Products */,
+				838CF9098DF442F0BDD88666 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +122,7 @@
 				B2B1DF0C177CF9A70041973B /* UIKit.framework */,
 				B2B1DF0E177CF9A70041973B /* CoreData.framework */,
 				B2B1DF30177CF9A70041973B /* XCTest.framework */,
+				AE61CBF8B5E348929E5481CC /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -127,6 +134,7 @@
 				B2B1DF1F177CF9A70041973B /* AppDelegate.h */,
 				B2B1DF20177CF9A70041973B /* AppDelegate.m */,
 				B2B1DF29177CF9A70041973B /* Images.xcassets */,
+				B2B1DF47177CFA190041973B /* Frontpage.storyboard */,
 				B2B1DF15177CF9A70041973B /* Networking */,
 				B2B1DF22177CF9A70041973B /* Models */,
 				B2B1DF13177CF9A70041973B /* Supporting Files */,
@@ -189,9 +197,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2B1DF41177CF9A70041973B /* Build configuration list for PBXNativeTarget "frontpage" */;
 			buildPhases = (
+				B17E931D2705442CA871F2C2 /* Check Pods Manifest.lock */,
 				B2B1DF01177CF9A70041973B /* Sources */,
 				B2B1DF02177CF9A70041973B /* Frameworks */,
 				B2B1DF03177CF9A70041973B /* Resources */,
+				3F750A140F514F639C00A5CA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -272,6 +282,37 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3F750A140F514F639C00A5CA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		B17E931D2705442CA871F2C2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B2B1DF01177CF9A70041973B /* Sources */ = {
@@ -394,6 +435,7 @@
 		};
 		B2B1DF42177CF9A70041973B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 838CF9098DF442F0BDD88666 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -407,6 +449,7 @@
 		};
 		B2B1DF43177CF9A70041973B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 838CF9098DF442F0BDD88666 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -477,6 +520,7 @@
 				B2B1DF43177CF9A70041973B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B2B1DF44177CF9A70041973B /* Build configuration list for PBXNativeTarget "frontpageTests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +529,7 @@
 				B2B1DF46177CF9A70041973B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
