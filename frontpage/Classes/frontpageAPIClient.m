@@ -1,5 +1,6 @@
 #import "frontpageAPIClient.h"
 #import "AFJSONRequestOperation.h"
+#import "TTTDateTransformers.h"
 
 static NSString * const kfrontpageAPIBaseURLString = @"http://www.reddit.com/";
 
@@ -29,43 +30,65 @@ static NSString * const kfrontpageAPIBaseURLString = @"http://www.reddit.com/";
 
 #pragma mark - AFIncrementalStore
 
-- (id)representationOrArrayOfRepresentationsFromResponseObject:(id)responseObject {
-    return responseObject;
-}
-
 - (NSURLRequest *)requestForFetchRequest:(NSFetchRequest *)fetchRequest
                              withContext:(NSManagedObjectContext *)context
 {
     NSMutableURLRequest *mutableURLRequest = nil;
     if ([fetchRequest.entityName isEqualToString:@"Post"]) {
-        mutableURLRequest = [self requestWithMethod:@"GET" path:@"/r/all/top" parameters:nil];
+        mutableURLRequest = [self requestWithMethod:@"GET" path:@"/r/all/top.json" parameters:nil];
     }
     
     return mutableURLRequest;
 }
 
-- (NSDictionary *)attributesForRepresentation:(NSDictionary *)representation 
+-(id)representationOrArrayOfRepresentationsFromResponseObject:(id)responseObject {
+    return [responseObject valueForKey:@"data"];
+}
+
+- (id)representationOrArrayOfRepresentationsOfEntity:(NSEntityDescription *)entity fromResponseObject:(id)responseObject {
+    id ro = [super representationOrArrayOfRepresentationsOfEntity:entity fromResponseObject:responseObject];
+    
+    if ([ro isKindOfClass:[NSDictionary class]]) {
+        id posts = nil;
+        posts = [[ro valueForKey:@"data"] valueForKey:@"children"];// valueForKey:@"data"];
+        if (posts) {
+            NSLog(@"got %i posts", [posts count]);
+            return posts;
+        } else {
+            abort();
+        }
+    }
+    NSLog(@"returning %@", responseObject);
+    return ro;
+}
+
+
+- (NSDictionary *)attributesForRepresentation:(NSDictionary *)representation  
                                      ofEntity:(NSEntityDescription *)entity 
                                  fromResponse:(NSHTTPURLResponse *)response 
 {
-    NSMutableDictionary *mutablePropertyValues = [[super attributesForRepresentation:representation ofEntity:entity fromResponse:response] mutableCopy];
+    NSDictionary *data = [representation valueForKey:@"data"];
+    NSMutableDictionary *mutablePropertyValues = [[super attributesForRepresentation:data ofEntity:entity fromResponse:response] mutableCopy];
     
-    // Customize the response object to fit the expected attribute keys and values  
-    
+    if ([entity.name isEqualToString:@"Post"]) {
+        [mutablePropertyValues setValue:[data valueForKey:@"id"] forKey:@"postID"];
+//        [mutablePropertyValues setValue:[[NSValueTransformer valueTransformerForName:TTTISO8601DateTransformerName] reverseTransformedValue:[data valueForKey:@"created"]] forKey:@"createdAt"];
+    }
+//    NSLog(@"entity %@ got  response %@ and mutable property values %@", entity.name, representation, mutablePropertyValues);
     return mutablePropertyValues;
 }
-
-- (BOOL)shouldFetchRemoteAttributeValuesForObjectWithID:(NSManagedObjectID *)objectID
-                                 inManagedObjectContext:(NSManagedObjectContext *)context
-{
-    return NO;
-}
-
-- (BOOL)shouldFetchRemoteValuesForRelationship:(NSRelationshipDescription *)relationship
-                               forObjectWithID:(NSManagedObjectID *)objectID
-                        inManagedObjectContext:(NSManagedObjectContext *)context
-{
-    return NO;
-}
-
+//
+//- (BOOL)shouldFetchRemoteAttributeValuesForObjectWithID:(NSManagedObjectID *)objectID
+//                                 inManagedObjectContext:(NSManagedObjectContext *)context
+//{
+//    return NO;
+//}
+//
+//- (BOOL)shouldFetchRemoteValuesForRelationship:(NSRelationshipDescription *)relationship
+//                               forObjectWithID:(NSManagedObjectID *)objectID
+//                        inManagedObjectContext:(NSManagedObjectContext *)context
+//{
+//    return NO;
+//}
+//
 @end

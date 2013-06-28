@@ -145,9 +145,10 @@ static NSString * AFQueryByAppendingParameters(NSString *query, NSDictionary *pa
         _candidateKeys = [[NSArray alloc] initWithObjects:@"id", @"_id", @"identifier", @"url", @"URL", nil];
     });
     
-    NSString *key = [[representation allKeys] firstObjectCommonWithArray:_candidateKeys];
+    NSDictionary *data = [representation valueForKey:@"data"];
+    NSString *key = [[data allKeys] firstObjectCommonWithArray:_candidateKeys];
     if (key) {
-        id value = [representation valueForKey:key];
+        id value = [data valueForKey:key];
         if (value) {
             return [value description];
         }

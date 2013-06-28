@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F8D08E54-2C7C-4CE5-9A75-488A8448101E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>frontpage</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>83D22FF4-0297-4404-82EE-A89B8947471D</key>
+		<string>ssh://github.com/gabrieloc/frontpage.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>frontpage.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>83D22FF4-0297-4404-82EE-A89B8947471D</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/gabrieloc/frontpage.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>83D22FF4-0297-4404-82EE-A89B8947471D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>83D22FF4-0297-4404-82EE-A89B8947471D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>frontpage</string>
+		</dict>
+	</array>
+</dict>
+</plist>

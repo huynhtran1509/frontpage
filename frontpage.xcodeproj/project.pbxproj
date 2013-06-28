@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1BED466142EA4EA78724C85C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE61CBF8B5E348929E5481CC /* libPods.a */; };
+		B2396FE9177DF75C00E52093 /* PostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27F99F7177DF6CD00C17371 /* PostsViewController.m */; };
+		B2397000177E27FC00E52093 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = B2396FFF177E27FC00E52093 /* Post.m */; };
+		B27F99F0177DF4FE00C17371 /* Frontpage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B1DF47177CFA190041973B /* Frontpage.storyboard */; };
 		B2B1DF09177CF9A70041973B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B1DF08177CF9A70041973B /* Foundation.framework */; };
 		B2B1DF0B177CF9A70041973B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B1DF0A177CF9A70041973B /* CoreGraphics.framework */; };
 		B2B1DF0D177CF9A70041973B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B1DF0C177CF9A70041973B /* UIKit.framework */; };
@@ -41,12 +44,18 @@
 /* Begin PBXFileReference section */
 		838CF9098DF442F0BDD88666 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		AE61CBF8B5E348929E5481CC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2396FFE177E27FC00E52093 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Post.h; path = Classes/Post.h; sourceTree = "<group>"; };
+		B2396FFF177E27FC00E52093 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Post.m; path = Classes/Post.m; sourceTree = "<group>"; };
+		B27F99F2177DF61B00C17371 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B27F99F4177DF62100C17371 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B27F99F6177DF6CD00C17371 /* PostsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PostsViewController.h; path = Classes/PostsViewController.h; sourceTree = "<group>"; };
+		B27F99F7177DF6CD00C17371 /* PostsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PostsViewController.m; path = Classes/PostsViewController.m; sourceTree = "<group>"; };
 		B2B1DF05177CF9A70041973B /* frontpage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = frontpage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B1DF08177CF9A70041973B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B2B1DF0A177CF9A70041973B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B2B1DF0C177CF9A70041973B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B2B1DF0E177CF9A70041973B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		B2B1DF11177CF9A70041973B /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
+		B2B1DF11177CF9A70041973B /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B2B1DF14177CF9A70041973B /* frontpage-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "frontpage-Prefix.pch"; sourceTree = "<group>"; };
 		B2B1DF16177CF9A70041973B /* frontpageAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = frontpageAPIClient.h; path = Classes/frontpageAPIClient.h; sourceTree = "<group>"; };
 		B2B1DF17177CF9A70041973B /* frontpageAPIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = frontpageAPIClient.m; path = Classes/frontpageAPIClient.m; sourceTree = "<group>"; };
@@ -65,8 +74,6 @@
 		B2B1DF3B177CF9A70041973B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B2B1DF3D177CF9A70041973B /* frontpageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = frontpageTests.m; sourceTree = "<group>"; };
 		B2B1DF47177CFA190041973B /* Frontpage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Frontpage.storyboard; sourceTree = "<group>"; };
-		B2B1DF48177CFB410041973B /* PostsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PostsViewController.h; path = Classes/PostsViewController.h; sourceTree = "<group>"; };
-		B2B1DF49177CFB410041973B /* PostsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PostsViewController.m; path = Classes/PostsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +126,8 @@
 		B2B1DF07177CF9A70041973B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B27F99F4177DF62100C17371 /* MapKit.framework */,
+				B27F99F2177DF61B00C17371 /* MapKit.framework */,
 				B2B1DF08177CF9A70041973B /* Foundation.framework */,
 				B2B1DF0A177CF9A70041973B /* CoreGraphics.framework */,
 				B2B1DF0C177CF9A70041973B /* UIKit.framework */,
@@ -170,6 +179,8 @@
 		B2B1DF22177CF9A70041973B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B2396FFE177E27FC00E52093 /* Post.h */,
+				B2396FFF177E27FC00E52093 /* Post.m */,
 				B2B1DF23177CF9A70041973B /* frontpage.xcdatamodeld */,
 			);
 			name = Models;
@@ -196,8 +207,8 @@
 		B2B1DF4A177CFB450041973B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B2B1DF48177CFB410041973B /* PostsViewController.h */,
-				B2B1DF49177CFB410041973B /* PostsViewController.m */,
+				B27F99F6177DF6CD00C17371 /* PostsViewController.h */,
+				B27F99F7177DF6CD00C17371 /* PostsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -251,6 +262,13 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Gabrieloc;
 				TargetAttributes = {
+					B2B1DF04177CF9A70041973B = {
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 0;
+							};
+						};
+					};
 					B2B1DF2E177CF9A70041973B = {
 						TestTargetID = B2B1DF04177CF9A70041973B;
 					};
@@ -280,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2B1DF2A177CF9A70041973B /* Images.xcassets in Resources */,
+				B27F99F0177DF4FE00C17371 /* Frontpage.storyboard in Resources */,
 				B2B1DF12177CF9A70041973B /* Podfile in Resources */,
 				B2B1DF1C177CF9A70041973B /* InfoPlist.strings in Resources */,
 			);
@@ -333,9 +352,11 @@
 			files = (
 				B2B1DF25177CF9A70041973B /* frontpage.xcdatamodeld in Sources */,
 				B2B1DF1E177CF9A70041973B /* main.m in Sources */,
+				B2396FE9177DF75C00E52093 /* PostsViewController.m in Sources */,
 				B2B1DF28177CF9A70041973B /* frontpageIncrementalStore.m in Sources */,
 				B2B1DF18177CF9A70041973B /* frontpageAPIClient.m in Sources */,
 				B2B1DF21177CF9A70041973B /* AppDelegate.m in Sources */,
+				B2397000177E27FC00E52093 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
